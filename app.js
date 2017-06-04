@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
-// import schema from './graphql/schema';
+import schema from './graphql/schema';
 
 import {
   graphqlExpress,
@@ -15,7 +15,7 @@ const app = express();
 app.use('*', cors());
 
 app.post('/graphql', bodyParser.json(), graphqlExpress({
-  // schema,
+  schema,
 }));
 
 app.get('/graphiql', graphiqlExpress({
